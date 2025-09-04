@@ -1,4 +1,4 @@
-# 图片生成插件 (img-plugin)
+# LangBot AI 绘图插件 (LangBotPlugin-AIDraw)
 
 这是一个支持 OpenAI 兼容 API 的 LangBot 图片生成插件。
 

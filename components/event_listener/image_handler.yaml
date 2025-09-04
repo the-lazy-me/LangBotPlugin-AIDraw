@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: EventListener
+metadata:
+  name: image_handler
+  label:
+    en_US: ImageHandlerEventListener
+    zh_Hans: ImageHandlerEventListener
+spec:
+execution:
+  python:
+    path: image_handler.py
+    attr: ImageHandlerEventListener

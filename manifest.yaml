@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: Plugin
+metadata:
+  author: lazy
+  name: LangBotPlugin-AIDraw
+  repository: 'https://github.com/the-lazy-me/LangBotPlugin-AIDraw'
+  version: 0.1.0
+  description:
+    en_US: Generate images using OpenAI-compatible API
+    zh_Hans: 使用 OpenAI 兼容 API 生成图片
+  label:
+    en_US: Image Generator
+    zh_Hans: 图片生成器
+  icon: assets/icon.svg
+spec:
+  config:
+    - name: api_key
+      type: string
+      label:
+        en_US: 'API Key'
+        zh_Hans: 'API 密钥'
+      required: true
+      default: ''
+    - name: base_url
+      type: string
+      label:
+        en_US: 'Base URL'
+        zh_Hans: '基础 URL'
+      required: false
+      default: 'https://api.qhaigc.net/v1'
+    - name: model
+      type: string
+      label:
+        en_US: 'Model Name'
+        zh_Hans: '模型名称'
+      required: false
+      default: 'qh-draw-x1-pro'
+    - name: image_size
+      type: string
+      label:
+        en_US: 'Image Size'
+        zh_Hans: '图片尺寸'
+      required: false
+      default: '1024x1024'
+  components:
+    EventListener:
+      fromDirs:
+      - path: components/event_listener/
+execution:
+  python:
+    path: main.py
+    attr: ImgPlugin
